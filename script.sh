@@ -1,11 +1,10 @@
 #!/bin/bash
 #测速
-speedtest(){
+speed_test(){
 	wget https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
 	chmod a+rx speedtest.py
 	mv speedtest.py /usr/local/bin/speedtest
 	chown root:root /usr/local/bin/speedtest
-	speedtest
 }
 echo
 echo && echo -e " Github Action 脚本 by DullJZ
@@ -20,6 +19,7 @@ case "$num" in
     curl cip.cc
     ;;
 1)
+    speed_test
     speedtest
     ;;
 2)
